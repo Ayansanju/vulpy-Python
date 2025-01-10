@@ -22,8 +22,8 @@ jobs:
             -H "Client-Secret: ${{ secrets.INTRUCEPT_CLIENT_SECRET }}" \
             -F "projectZipFile=@project.zip" \
             -F "applicationId=${{ secrets.INTRUCEPT_APPLICATION_ID }}" \
-            -F "scanName=SAST Scan - ${{ github.sha }}" \
-            -F "language=javascript" \
+            -F "scanName=vulpy-python SAST Scan - ${{ github.sha }}" \
+            -F "language=python" \
             https://appsecops-api.intruceptlabs.com/api/v1/integrations/sast-scans)
           
           CAN_PROCEED=$(echo $RESPONSE | jq -r '.canProceed')
